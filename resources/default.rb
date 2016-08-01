@@ -13,3 +13,5 @@ attribute :aws_access_key_id, kind_of: String
 attribute :aws_secret_access_key, kind_of: String
 attribute :aws_session_token, kind_of: String
 attribute :region, kind_of: String
+attribute :retries, kind_of: Integer, default: 0
+attribute :retry_delay, kind_of: Integer, default: 0

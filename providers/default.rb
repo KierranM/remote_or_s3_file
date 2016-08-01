@@ -38,6 +38,8 @@ def do_remote_or_s3_file(resource_action)
       aws_session_token new_resource.aws_session_token unless new_resource.aws_session_token.nil?
       region new_resource.region unless new_resource.region.nil?
       action resource_action
+      retries new_resource.retries
+      retry_delay new_resource.retry_delay
     end
   else
     remote_file new_resource.path do
@@ -48,6 +50,8 @@ def do_remote_or_s3_file(resource_action)
       checksum new_resource.checksum
       backup new_resource.backup
       action resource_action
+      retries new_resource.retries
+      retry_delay new_resource.retry_delay
     end
   end
 end
